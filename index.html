@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>minimal</title>
+    <script src="http://localhost:5173/src/main.js" type="module"></script>
+  </head>
+
+  <body>
+    <button onclick='toggleContent()'>Toggle Content</button>
+    <div id='content'></div>
+    <script>
+      const content = document.querySelector('#content');
+      const toggleContent = () => {
+        if (content.children.length) {
+          content.removeChild(content.children[0]);
+          return;
+        }
+
+        const el = document.createElement('custom-element');
+        content.appendChild(el);
+      }
+    </script>
+  </body>
+</html>
